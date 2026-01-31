@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Outside The Bun | A Dachshund Lifestyle Brand</title>
+    <meta name="description"
+        content="Life Outside The Bun - A premium lifestyle brand celebrating the unique spirit of dachshunds and their devoted humans.">
+
+    <!-- Google Fonts: Playfair Display + Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* CSS Reset & Base */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --color-cream: #FDF8F3;
+            --color-warm-brown: #5C4033;
+            --color-accent: #C8A882;
+            --color-dark: #2C1810;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-cream);
+        }
+
+        /* Full Bleed Background Container */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Background Image - REPLACE 'dog.jpg' WITH YOUR IMAGE */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/lifeoutsidethebun-background--20260131-web.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+
+        /* Dark Overlay for Text Readability */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom,
+                    rgba(44, 24, 16, 0.3) 0%,
+                    rgba(44, 24, 16, 0.5) 50%,
+                    rgba(44, 24, 16, 0.7) 100%);
+            z-index: -1;
+        }
+
+        /* Logo - Top Right */
+        .logo {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo img {
+            max-height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        /* Fallback text logo if no image */
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--color-cream);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Centered Content */
+        .content {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Brand Name / Headline */
+        .headline {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.02em;
+        }
+
+        .headline em {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+
+        /* Tagline */
+        .tagline {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Optional CTA Button */
+        .cta {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--color-dark);
+            background: var(--color-cream);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta:hover {
+            background: var(--color-accent);
+            color: var(--color-cream);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .logo {
+                top: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .tagline {
+                letter-spacing: 0.1em;
+            }
+
+            .cta {
+                padding: 0.875rem 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="hero">
+        <!-- Logo (Top Right) -->
+        <div class="logo">
+            <img src="images/LifeOutsideTheBun--Concept1-Prototype-Trans-Large-web.png" alt="Life Outside The Bun">
+        </div>
+
+        <!-- Centered Content - Edit this text as needed -->
+        <div class="content">
+            <h1 class="headline">Life Outside <em>The Bun</em></h1>
+            <p class="tagline">It's a Way of Life, You Get It</p>
+
+            <!-- Optional: Call to Action Button (uncomment if needed) -->
+            <!-- <a href="#" class="cta">Coming Soon</a> -->
+        </div>
+    </main>
+</body>
+
+</html>
